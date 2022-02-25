@@ -8,13 +8,16 @@ BUILD_DIR=$HOME/build \
 INSTALL_DIR=$HOME/install \
 GVM_VERSION=21.4.4 \
 GVM_LIBS_VERSION=$GVM_VERSION
+echo "Finished setting up environment variables..."
 
 # Creating a User and a Group
 sudo useradd -r -M -U -G sudo -s /usr/sbin/nologin gvm
+echo "Created user and group..."
 
 # Adjusting the Current User
 sudo usermod -aG gvm $USER
 su $USER
+echo "Completed adjustment of current user..."
 
 # Creating a Source, Build and Install Directory
 mkdir -p $SOURCE_DIR
